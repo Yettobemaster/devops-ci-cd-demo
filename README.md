@@ -1,44 +1,90 @@
-### This repository is no longer maintained!
+# 🚀 Node.js Sample App - DevOps CI/CD Demo
 
-**For the most up to date test app to get you started on Heroku, head on over to [`node-js-getting-started`](https://github.com/heroku/node-js-getting-started).**
+This project is a simple Node.js application containerized with Docker and deployed on an AWS EC2 instance. It demonstrates an end-to-end DevOps workflow including local development, containerization, GitHub integration, and cloud deployment.
 
 ---
 
-# node-js-sample
+## 💻 Tech Stack
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+- Node.js
+- Express.js
+- Docker
+- AWS EC2
+- Git & GitHub
 
-## Running Locally
+---
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+## 📄 Project Features
 
-```sh
-git clone git@github.com:heroku/node-js-sample.git # or clone your own fork
-cd node-js-sample
+✅ Simple Node.js "Hello World" app  
+✅ Dockerized for portability and reproducibility  
+✅ Deployed on AWS EC2 with security group configuration  
+✅ Open to future CI/CD automation (e.g., Jenkins, Terraform, Ansible)
+
+---
+
+## ⚙️ How to Run Locally
+
+```bash
+git clone https://github.com/Yettobemaster/devops-ci-cd-demo.git
+cd devops-ci-cd-demo
 npm install
 npm start
-```
+Visit: http://localhost:5000
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+🐳 How to Run with Docker Locally
+bash
+Copy
+Edit
+docker build -t node-js-sample .
+docker run -p 5000:5000 node-js-sample
+Visit: http://localhost:5000
 
-## Deploying to Heroku
+☁️ How to Deploy on AWS EC2
+1️⃣ Launch an EC2 instance (Amazon Linux or Ubuntu).
+2️⃣ Configure security group (allow SSH and TCP 5000).
+3️⃣ SSH into the instance, install Docker and Git.
+4️⃣ Clone repo and build Docker image:
 
-```
-heroku create
-git push heroku master
-heroku open
-```
+bash
+Copy
+Edit
+git clone https://github.com/Yettobemaster/devops-ci-cd-demo.git
+cd devops-ci-cd-demo
+docker build -t node-js-sample .
+docker run -d -p 5000:5000 node-js-sample
+Visit: http://<your-ec2-public-ip>:5000
 
-Alternatively, you can deploy your own copy of the app using the web-based flow:
+🌐 Architecture Diagram
+plaintext
+Copy
+Edit
+[ GitHub Repo ] 
+      |
+      v
+[ Local Dev Machine ]
+      |
+      v
+[ Docker Container ]
+      |
+      v
+[ AWS EC2 Instance ]
+      |
+      v
+[ Public Web Access on Port 5000 ]
+✨ Future Enhancements
+Add CI/CD pipeline using Jenkins
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+Use Terraform for infra provisioning
 
-## Documentation
+Use Ansible for automated configuration
 
-For more information about using Node.js on Heroku, see these Dev Center articles:
+Deploy on Kubernetes
 
-- [10 Habits of a Happy Node Hacker](https://blog.heroku.com/archives/2014/3/11/node-habits)
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+🙏 Author
+Pramod Holkar
+
+📬 Contact
+GitHub: Yettobemaster
+
+LinkedIn: https://www.linkedin.com/in/pramod-holkar-096692216
